@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="http://ros.org/ros/package_format2.xsl"?>
+<package format="2">
+  <name>tsb_recruitment_datagenerator</name>
+  <version>0.0.0</version>
+  <description>DataGenerator nodes for TSB recruitment dashboard development</description>
+  <maintainer email="tecnico.solarboat@gmail.com">Técnico Solar Boat</maintainer>
+  <license>TODO</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>tsb_recruitment_interfaces</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

@@ -1,0 +1,24 @@
+{
+  "name": "OtterSimple",
+  "world": "LidarTests",
+  "package_name": "WaveSim",
+  "frames_per_sec": true,
+  "ticks_per_sec": 60,
+  "agents": [
+    {
+      "agent_name": "auv0",
+      "agent_type": "CougUV", 
+      "sensors": [
+        {
+          "sensor_type": "IMUSensor",
+          "sensor_name": "imu",
+          "Hz": 20,
+          "ros_publish": true,
+          "frame": "ahrs_link"
+        }
+      ],
+      "control_scheme": 0,
+      "location": [0, 0, 1]
+    }
+  ]
+}

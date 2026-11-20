@@ -1,0 +1,20 @@
+simple_simulator:
+  ros__parameters:
+    initial_x: -7.0
+    initial_y: -6.0
+    initial_yaw: 0.0
+    world_half_size: 12.0
+    robot_radius: 0.35
+    rate_hz: 10.0
+    scan_beams: 360
+    range_min: 0.1
+    range_max: 20.0
+    auto_motion: true
+    forward_speed: 0.6
+    yaw_rate: 0.12
+    command_timeout: 1.0
+    # Rectangles flattened as [xmin, ymin, xmax, ymax, ...], in metres.
+    obstacles: [-2.0, -1.0, 0.0, 3.0,
+                3.0, -5.0, 5.0, -2.0,
+                4.0, 3.0, 7.0, 5.0,
+                -7.0, 5.0, -4.0, 7.0]

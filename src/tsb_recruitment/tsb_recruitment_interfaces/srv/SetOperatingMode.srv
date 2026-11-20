@@ -1,0 +1,17 @@
+# SetOperatingMode.srv
+#
+# This file defines the SetOperatingMode service.
+# It is used to set the operating mode.
+# The service takes a mode as input and returns a success flag, the previous mode, and the new mode.
+
+
+# Request
+tsb_recruitment_interfaces/OperatingMode mode
+
+---
+
+# Response
+bool    success # Indicates if the operating mode was set successfully
+tsb_recruitment_interfaces/OperatingMode   previous_mode # Previous mode before the change
+tsb_recruitment_interfaces/OperatingMode   new_mode      # New mode after the change
+

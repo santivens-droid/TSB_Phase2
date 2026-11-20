@@ -1,0 +1,14 @@
+{
+    "cmake.ignoreCMakeListsMissing": true,
+    "terminal.integrated.profiles.linux": {
+      "Sourced Workspace": {
+        "path": "/bin/bash",
+        "args": ["-i", "-c", "source ./scripts/source_workspace.sh && exec bash"]
+      }
+    },
+    "files.associations": {
+      "*.xacro": "xml",
+      "*.urdf": "xml",
+      "chrono": "cpp"
+    }
+}

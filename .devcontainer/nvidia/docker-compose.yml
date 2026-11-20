@@ -1,0 +1,5 @@
+
+services:
+  ros:
+    runtime: nvidia
+    command: [ "sleep", "infinity" ]

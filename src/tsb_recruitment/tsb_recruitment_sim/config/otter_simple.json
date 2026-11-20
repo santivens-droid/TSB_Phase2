@@ -1,0 +1,86 @@
+{
+  "name": "OtterSimple",
+  "world": "LidarTests",
+  "package_name": "WaveSim",
+  "frames_per_sec": true,
+  "ticks_per_sec": 60,
+  "agents": [
+    {
+      "agent_name": "auv0",
+      "agent_type": "Otter", 
+      "sensors": [
+        {
+          "sensor_type": "IMUSensor",
+          "sensor_name": "imu",
+          "Hz": 20,
+          "socket": "AHRS",
+          "ros_publish": true,
+          "frame": "ahrs_link"
+        },
+        {
+          "sensor_type": "GPSSensor",
+          "sensor_name": "gps",
+          "Hz": 20,
+          "socket": "AHRS",
+          "ros_publish": true,
+          "frame": "ahrs_link"
+        },
+        {
+          "sensor_type": "VelocitySensor",
+          "sensor_name": "velocity",
+          "Hz": 20,
+          "socket": "AHRS",
+          "ros_publish": true,
+          "frame": "ahrs_link"
+        },
+        {
+          "sensor_type": "CameraSensor",
+          "sensor_name": "camera",
+          "socket": "Camera",
+          "Hz": 15,
+          "ros_publish": true,
+          "frame": "camera_link",
+          "configuration": {
+              "CaptureWidth": 1720,
+              "CaptureHeight": 1080,
+              "ExposureCompensation": 1.0,
+              "ShutterSpeed": 100,
+              "ISO": 50.0,
+              "FilmSlope": 0.2,
+              "BloomIntensity": 0.3,
+              "ExposureMinBrightness": 0.1,
+              "ExposureMaxBrightness": 1.0,
+              "FilmWhiteClip": 0.85
+          }
+        },
+        {
+          "sensor_type": "RaycastLidar",
+          "sensor_name": "lidar",
+          "socket": "Lidar",
+          "Hz": 10,
+          "ros_publish": true,
+          "frame": "lidar_link",
+          "configuration": {
+              "Channels": 96,  
+              "Range": 250,
+              "PointsPerSecond": 120000,
+              "RotationFrequency": 10,
+              "UpperFovLimit": 10,
+              "LowerFovLimit": -10,
+              "HorizontalFov": 120.0,
+              "VerticalFov": 20.0,
+              "AtmospAttenRate": 0.2,             
+              "RandomSeed": 42,                      
+              "DropOffGenRate": 0.2,                
+              "DropOffIntensityLimit": 0.8,        
+              "DropOffAtZeroIntensity": 0.4,        
+              "ShowDebugPoints": false,              
+              "NoiseStdDev": 0.0            
+            }
+        }
+      ],
+      "control_scheme": 1,
+      "location": [0, 0, 1]
+    }
+  ]
+}

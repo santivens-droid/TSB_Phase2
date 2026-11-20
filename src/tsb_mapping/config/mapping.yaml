@@ -1,0 +1,18 @@
+mapping_node:
+  ros__parameters:
+    # O simulador vai de -12 a +12 em X e Y.
+    # O mapa vai de -14 a +14, para as paredes ficarem DENTRO da grelha.
+    resolution: 0.10     # metros por celula
+    width: 280           # celulas em X
+    height: 280          # celulas em Y
+    origin_x: -14.0
+    origin_y: -14.0
+
+    # Probabilidades para o modelo inverso do sensor.
+    p_free: 0.35
+    p_occupied: 0.75
+    log_odds_min: -5.0
+    log_odds_max: 5.0
+
+    publish_rate_hz: 2.0
+    max_pending_scans: 30

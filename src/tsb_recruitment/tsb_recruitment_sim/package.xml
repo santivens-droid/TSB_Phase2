@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>tsb_recruitment_sim</name>
+  <version>0.0.0</version>
+  <description>
+    HoloOcean interface package for TSB Recruitment Project
+  </description>
+  <maintainer email="tecnico.solarboat@gmail.com">Técnico Solar Boat</maintainer>
+  <license>TODO</license>
+
+  <!-- Core ROS2 dependencies -->
+  <depend>rclpy</depend>
+  
+  <!-- Custom interfaces -->
+  <depend>tsb_recruitment_interfaces</depend>
+  
+  <!-- Message type dependencies -->
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>rosgraph_msgs</depend>
+  
+  <!-- Service type dependencies -->
+  <depend>std_srvs</depend>
+  
+  <!-- Python dependencies for HoloOcean -->
+  <exec_depend>python3-numpy</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

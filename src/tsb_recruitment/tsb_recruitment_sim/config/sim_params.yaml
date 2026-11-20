@@ -1,0 +1,14 @@
+# TSB Recruitment Simulation Node Parameters
+
+tsb_recruitment_sim_node:
+  ros__parameters:
+    # Scenario configuration file (required)
+    config_file: "otter_simple.json"
+    
+    # OVERRIDE PARAMETERS - These override the scenario JSON file settings
+    frames_per_sec: true        # OVERRIDES frames_per_sec in scenario JSON # True Real time, False as fast as possible
+    ticks_per_sec: 60.0         # OVERRIDES ticks_per_sec in scenario JSON  # How many ticks there are in one second of simulation time
+    
+    # STANDALONE PARAMETERS - These are not present in the scenario JSON
+    show_viewport: false         # Whether to show HoloOcean viewport window
+    render_quality: -1          # -1 for default, 0 = Low Quality and 3 = Epic quality.

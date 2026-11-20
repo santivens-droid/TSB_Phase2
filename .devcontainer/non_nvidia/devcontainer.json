@@ -1,0 +1,29 @@
+{
+    "name": "ROS Development Container without NVidia support",
+    "dockerComposeFile": [
+        "../../docker-compose.yml",
+    	"./docker-compose.yml"
+    ],
+    "service": "ros",
+    "workspaceFolder": "/ws",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-python.python",
+                "twxs.cmake",
+                "redhat.vscode-yaml",
+                "ms-vscode.cmake-tools",
+                "aaron-bond.better-comments",
+                "nonanonno.vscode-ros2"
+            ]
+        }
+    },
+    "mounts": [
+        "type=bind,source=${localEnv:HOME}/.ssh,target=/home/ros/.ssh,readonly", // SSH agent forwarding
+        "type=bind,source=${localEnv:HOME}/.gitconfig,target=/home/ros/.gitconfig,readonly" // Git config
+    ],
+    "remoteUser": "ros",
+    "postStartCommand": "sudo chown ros:ros /ws/ && chmod +x /ws/scripts/* && /ws/scripts/install_holoocean.sh",
+    "initializeCommand": "xhost +local: || true" // Needed because .Xauthority does not mount correctly on some machines
+}

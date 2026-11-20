@@ -1,0 +1,44 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build and Launch",
+      "type": "shell",
+      "command": "./scripts/build_and_launch.sh",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+
+      }
+    },
+    {
+      "label": "Build Workspace",
+      "type": "shell",
+      "command": "./scripts/build_workspace.sh",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Clean Workspace",
+      "type": "shell",
+      "command": "./scripts/clean_workspace.sh",
+      "problemMatcher": []
+    },
+    {
+      "label": "Launch Workspace",
+      "type": "shell",
+      "command": "./scripts/launch_workspace.sh",
+      "problemMatcher": []
+    },
+    {
+      "label": "Install Holoocean",
+      "type": "shell",
+      "command": "./scripts/install_holoocean.sh",
+      "problemMatcher": []
+    }
+  ]
+}

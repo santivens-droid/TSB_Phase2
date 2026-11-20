@@ -1,0 +1,30 @@
+services:
+  # Main ROS container
+  ros:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - USERNAME=ros
+        - ROS_DOMAIN_ID=30 # Use something unique if using network_mode: host
+    # Container can be launched in privileged mode with host networking for easier access to hardware
+    # If running multiple containers on the same host, make sure to change ROS_DOMAIN_ID or avoid host networking
+    #privileged: true
+    #network_mode: host
+    #ipc: host
+    #pid: host
+    group_add:
+      - 44 # The video group in your distribution, on Ubuntu it's 44
+    ports:
+      - 10000:8765 # Change 10000 to another port if using multiple containers on the same machine. VSCode should automatically map the ports anyway.
+    volumes:
+      - .:/ws:rw
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${HOME}/.Xauthority:/tmp/.Xauthority:ro
+    environment:
+      - DISPLAY=${DISPLAY}
+      - XAUTHORITY=/tmp/.Xauthority
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      - USING_NVIDIA=true
+    runtime: nvidia

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<robot name="otter">
+
+  <!-- Base -->
+  <link name="base_link"/>
+
+  <!-- LiDAR -->
+  <link name="lidar_link"/>
+  <joint name="base_to_lidar" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+    <origin xyz="-0.06 0.0 0.71" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Camera -->
+  <link name="camera_link"/>
+  <joint name="base_to_camera" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+    <origin xyz="-0.05 0.0 0.6" rpy="0 0 0"/>
+  </joint>
+
+  <!-- AHRS -->
+  <link name="ahrs_link"/>
+  <joint name="base_to_ahrs" type="fixed">
+    <parent link="base_link"/>
+    <child link="ahrs_link"/>
+    <origin xyz="0.4 0.0 0.3" rpy="0 0 0"/>
+  </joint>
+
+</robot>
+

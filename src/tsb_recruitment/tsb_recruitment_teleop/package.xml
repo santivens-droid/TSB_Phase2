@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="http://ros.org/ros/package_format2.xsl"?>
+<package format="2">
+  <name>tsb_recruitment_teleop</name>
+  <version>0.0.0</version>
+  <description>Teleoperation node for TSB recruitment project</description>
+  <maintainer email="tecnico.solarboat@gmail.com">Técnico Solar Boat</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>tsb_recruitment_interfaces</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
